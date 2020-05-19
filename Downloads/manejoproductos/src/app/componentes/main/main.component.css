@@ -1,0 +1,78 @@
+.principal
+{
+  background-color: white;
+  padding : 10px;
+  margin-top: 20px;
+}
+
+#patron
+{
+  width: 80%;
+}
+
+.productos
+{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  height: 55vh;
+  overflow-y:scroll;
+}
+
+
+.producto
+{
+  width: 24%;
+  border: 1px solid #5B92D9;
+  box-shadow: 3px 3px 6px #C2C2C2;
+  padding: 3px;
+  background-color: #F2F2F2;
+  min-height: 80% !important;
+  margin-top: 40px;
+  margin-right: 10px;
+}
+
+.producto img{
+  width: 100%;
+  height: auto;
+}
+
+.seccion, .header
+{
+  margin: 0px;
+  padding: 0px;
+}
+
+@media only screen and (max-width: 1479px)
+{
+  #patron
+  {
+    width: 50%;
+  }
+
+  .buscador
+  {
+    text-align: center
+  }
+
+  .producto
+  {
+    width: 32%;
+  }
+}
+
+@media only screen and (max-width: 1122px)
+{
+  .producto
+  {
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width: 595px)
+{
+  .producto
+  {
+    width: 45%;
+  }
+}

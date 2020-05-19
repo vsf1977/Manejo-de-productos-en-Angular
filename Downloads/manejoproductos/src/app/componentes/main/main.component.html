@@ -1,0 +1,64 @@
+<div class = "container">
+  <app-barra-navegacion></app-barra-navegacion>
+  <div class="row principal">
+    <div class="row header">
+      <div class="row center-align titulo">
+        <div class="col s12">
+            <h4>Catálogo de Productos</h4>
+        </div>
+      </div>
+      <div class="row seccion">
+        <div class="col s12 m12 l12 center-align">
+          <a class="waves-effect waves-light btn-small" (click)="Agregarproducto()">Agregar producto</a>
+        </div>
+        <div class="col s6 m6 l6 Filtrar">
+            <h5>Filtros</h5>
+            <div class ="filtros">
+              Nombre: <input [(ngModel)]="f_nombre"  id="f_nombre" >
+              Pais de fabricacion: <input [(ngModel)]="f_pais"  id="f_pais" >
+            </div>
+        </div>
+        <div class="col s6 m6 l6 Ordenar">
+          <h5>Ordenar</h5>
+          <span>Campo</span><br>
+          <label>
+            <input name="campo" type="radio" value ="pais" [(ngModel)]='campo'/>
+            <span>Pais de fabricacion:</span>
+          </label><br>
+          <label>
+            <input name="campo" type="radio" value ="nombre" [(ngModel)]='campo'/>
+            <span>Nombre:</span>
+          </label><br><hr>
+          <span>Orden</span><br>
+          <label>
+            <input name="orden" type="radio" value ="asc"  [(ngModel)]='orden'/>
+            <span>Ascendente</span>
+          </label><br>
+          <label>
+            <input name="orden" type="radio" value ="desc"  [(ngModel)]='orden'/>
+            <span>Descendente</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class = "row productos">
+      <div *ngFor="let item of productos | filtro:f_nombre:f_pais |orden:campo:orden" class="producto">
+        <h5 class="nombre">{{item.nombre}}</h5>
+        <span>Descripcion : {{item.descripcion}} </span><br>
+        <span>Fecha de lanzamiento : {{item.fecha_lanz}} </span><br>
+        <span>Correo del fabricante : {{item.correo_fab}} </span><br>
+        <span>Pais del fabricante : {{item.pais_fab}} </span><br>
+        <span>Precio : {{item.precio | currency}} </span><br>
+        <span>Unidades disponibles : {{item.uni_disp}}</span><br>
+        <span>Unidades vendidas : {{item.uni_ven}}</span><br><br>
+        <div class = "botones">
+          <a class="waves-effect waves-light btn-small" (click)="Eliminar(item.id)">Eliminar</a>
+          <a class="waves-effect waves-light btn-small" [routerLink]="['/edit',item.id]">Editar</a>
+        </div><br>
+        <img src= "../../../assets/{{item.imagen}}" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+

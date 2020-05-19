@@ -1,0 +1,19 @@
+.principal
+{
+  background-color: white;
+  padding : 5px;
+  margin-top: 20px;
+}
+
+.campos
+{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.campos > div
+{
+    margin: 10px;
+    width: 22.8%;
+}

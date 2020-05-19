@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "nombre": "televisor",
+    "descripcion": "televisor de 40\"",
+    "fecha_lanz": "14/10/2017",
+    "correo_fab": "televisor@gmail.com",
+    "pais_fab": "usa",
+    "precio": 1500000,
+    "uni_disp": 1000,
+    "uni_ven": 100,
+    "imagen": "tv.png"
+  },
+  {
+    "id": 2,
+    "nombre": "radio",
+    "descripcion": "radio am/fm",
+    "fecha_lanz": "4/02/2018",
+    "correo_fab": "radio@gmail.com",
+    "pais_fab": "usa",
+    "precio": 150000,
+    "uni_disp": 2000,
+    "uni_ven": 100,
+    "imagen": "radio.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "radio",
+    "descripcion": "radio am/fm",
+    "fecha_lanz": "4/02/2018",
+    "correo_fab": "radio@gmail.com",
+    "pais_fab": "usa",
+    "precio": 150000,
+    "uni_disp": 2000,
+    "uni_ven": 100,
+    "imagen": "descarga.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "radio",
+    "descripcion": "radio am/fm",
+    "fecha_lanz": "4/02/2018",
+    "correo_fab": "radio@gmail.com",
+    "pais_fab": "usa",
+    "precio": 150000,
+    "uni_disp": 2000,
+    "uni_ven": 100,
+    "imagen": "radio.jpg"
+  }
+ ]

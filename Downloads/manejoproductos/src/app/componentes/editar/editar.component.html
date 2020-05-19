@@ -1,0 +1,57 @@
+<div class = "container">
+  <app-barra-navegacion></app-barra-navegacion>
+  <div class="row principal">
+    <div class="row center-align">
+      <h5>Editar Producto</h5>
+    </div>
+    <div class="row">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" validate>
+        <div class="campos">
+          <div class="s12">
+            <span>NOMBRE</span>
+            <input type="text" id="nombre" [(ngModel)]="producto.nombre" required [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="s12">
+            <span>DESCRIPCION</span>
+            <input type="text" id="descripcion" [(ngModel)]="producto.descripcion" required [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="s12">
+            <span>FECHA DE LANZAMIENTO</span>
+            <input type="date" id="fecha_lanz" [(ngModel)]="producto.fecha_lanz" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="s12">
+            <span>CORREO DE FABRICANTE</span>
+            <input type="email" id="correo_fab" [(ngModel)]="producto.correo_fab" required [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="s12">
+            <span>PAIS DE FABRICANTE</span>
+            <select matNativeControl class="browser-default" id="pais_fab" [(ngModel)]="producto.pais_fab" [ngModelOptions]="{standalone: true}">
+              <option *ngFor="let pais of paises" [value]="pais">{{pais}}</option>
+            </select>
+          </div>
+          <div class="s12">
+            <span>PRECIO</span>
+            <input type="number" id="precio" [(ngModel)]="producto.precio" required [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="s12">
+            <span>UNIDADES DISPONIBLES</span>
+            <input type="number" id="uni_disp" [(ngModel)]="producto.uni_disp" required [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="s12">
+            <span>UNIDADES VENDIDAS</span>
+            <input type="number" id="uni_ven" [(ngModel)]="producto.uni_ven" required [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="s12">
+            <span>ELIJA LA IMAGEN DEL PRODUCTO</span>
+            <input type="file" [(ngModel)]="producto.imagen" accept="image/*" [ngModelOptions]="{standalone: true}">
+          </div>
+        </div><br><br>
+        <div class="center-align botones">
+          <button class="btn waves-effect waves-light" type="submit" name="action">Editar producto</button>
+          <button class="btn waves-effect waves-light" [routerLink]="['main']">Volver</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
