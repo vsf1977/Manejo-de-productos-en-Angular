@@ -18,6 +18,7 @@ export class MainComponent implements OnInit {
   f_pais = '';
   campo = '';
   orden = '';
+
   constructor(private database: DatabaseService, private datos: DatosService, private router: Router) {
     if (this.datos.VerificarSesion() == null) {
       this.router.navigate(['login']);
@@ -28,7 +29,6 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
   }
-
 
   ListaProductos() {
     let key: any;

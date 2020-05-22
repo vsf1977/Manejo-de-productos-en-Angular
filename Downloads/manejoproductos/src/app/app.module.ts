@@ -16,7 +16,9 @@ import { EditarComponent } from './componentes/editar/editar.component';
 import { FiltroPipe } from './filtro.pipe';
 import { OrdenPipe } from './orden.pipe';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule
   ],
   providers: [DatabaseService, DatosService],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { Usermodel, Productmodel } from '../modelos/modelos/modelos.module';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AngularFireStorage } from 'angularfire2/storage';
 
 
 
@@ -10,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class DatabaseService {
 
   respuesta: any;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,  private storage: AngularFireStorage) { }
 
   getUsers(): Observable<Usermodel[]> {
     return this.http.get<Usermodel[]>('https://prueba-1a6f0.firebaseio.com/usuarios/.json');
@@ -37,6 +38,10 @@ export class DatabaseService {
   editProduct(producto: Productmodel, key: string): Observable<number> {
     const datos = JSON.stringify(producto);
     return this.http.put<number>('https://prueba-1a6f0.firebaseio.com/productos/' + key + '/.json', datos);
+  }
+
+  getUrlImage(id: string) {
+    return this.storage.ref(id).getDownloadURL();
   }
 
 }
